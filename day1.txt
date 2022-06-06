@@ -1,0 +1,97 @@
+Docker Engine == Docker Client  + Docker Server
+Docker image ====
+
+Root filesystem + user filesystem + app filesystem
++ centos		+ root		+ apache
+
+apache === rootfs + user + apache
+app == rootfs + user + tomcat + java + mysql + app
+
+Vm Image 
+-------------------------
+BOOT filesystem + Root filesystem + user filesystem + app filesystem
+--------------------------------------------------------------------
+kernel 		+ centos		+ root		+ apache
+=============================================================
+
+How to install docker?			DONE
+
+    8  docker
+    9  clear
+   10  docker info
+   11  clear
+   12  docker version
+   13  clear
+   14  which docker
+   15  which dockerd
+   16  ps -eaf | grep docker
+   17  history
+
+
+how to work with docker container?
+
+Container Lifecycle
+---------------------------------
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+17  history
+   18  clear
+   19  ls
+   20  docker images
+   21  docker ps
+   22  docker ps -a
+   23  docker pull httpd
+   24  clear
+   25  docker images
+   26  docker create --name=raj1 httpd
+   27  docker ps
+   28  docker ps -a
+   29  docker create --name=raj2 httpd
+   30  docker ps -a
+   31  docker create --name=raj3 httpd
+   32  clear
+   33  docker create --name=raj3 httpd
+   34  docker ps -a
+   35  docker start 7457f703f334
+   36  docker ps -a
+   37  docker start raj2
+   38  clear
+   39  docker start raj2
+   40  docker ps -a
+   41  docker stop
+   42  docker stop raj3
+   43  clear
+   44  docker ps -a
+   45  docker start raj3
+   46  docker ps -a
+   47  docker restart raj2
+   48  docker ps -a
+   49  docker pause raj2
+   50  docker ps -a
+   51  docker unpause raj2
+   52  clear
+   53  docker ps -a
+   54  docker kill raj2
+   55  docker ps -a
+   56  docker rm raj2
+   57  docker ps -a
+   58  docker rm raj3
+   59  docker stop raj3
+   60  docker rm raj3
+   61  docker rm raj1
+   62  docker ps -a
+   63  clear
+   64  docker ps -a
+   65  history
+
+
+
+IP - 3.111.187.253
+User - centos
+Pass - centos123
+
+
+
+
+
+
