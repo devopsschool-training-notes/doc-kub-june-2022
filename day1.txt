@@ -204,15 +204,75 @@ docker run -d -p 82:80 httpd
 --------------------------------------
 Assginment - Choose 1 fav image from hub and play with it.
 
+=====================================================
+
+https://www.devopsschool.com/blog/the-docker-command-line-complete-referenece/
 
 
 
+157  docker run -itd ubuntu
+  158  docker ps
+  159  clear
+  160  docker ps
+  161  ls
+  162  docker exec e8bdd44298cc ls /tmp
+  163  docker cp e8bdd44298cc:/tmp
+  164  clear
+  165  ls
+  166  docker cp get-docker.sh e8bdd44298cc:/tmp
+  167  docker exec e8bdd44298cc ls /tmp
+  168  ls
+  169  rm -rf get-docker.sh
+  170  docker exec e8bdd44298cc:/tmp/get-docker.sh .
+  171  docker cp e8bdd44298cc:/tmp/get-docker.sh .
+  172  ls
 
 
+ 172  ls
+  173  history
+  174  clear
+  175  docker ps
+  176  docker diff e8bdd44298cc
+  177  docker ps
+  178  docker port e8bdd44298cc
+  179  docker run -d -p 81:80 httpd
+  180  docker ps
+  181  docker port f3481c3dbe97
+  182  clear
+  183  docker ps
+  184  docker rename clever_albattani ramukaka
+  185  docker ps
+  186  history
+
+---------------------------------
+update	Update configuration of one or more containers
+wait	Block until one or more containers stop, then print their exit codes
+---------------------------------
 
 
-
-
+ 186  history
+  187  clear
+  188  docker ps
+  189  docker logs f3481c3dbe97
+  190  docker logs e8bdd44298cc
+  191  clear
+  192  docker stat
+  193  docker stats
+  194  docker stats f3481c3dbe97
+  195  clear
+  196  ls
+  197  docker ps
+  198  ps -eaf | grep docker
+  199  ps -eaf | grep containerd
+  200  clear
+  201  ps -eaf | grep containerd
+  202  clear
+  203  docker psd
+  204  docker ps
+  205  docker top ramukaka
+  206  clear
+  207  docker events
+  208  history
 
 
 
