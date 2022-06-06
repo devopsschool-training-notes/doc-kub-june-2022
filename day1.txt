@@ -145,14 +145,64 @@ PID 1 can be anything...
   101  docker ps
   102  docker attach b4bb521c6e94
   103  docker ps -a
+================================================
+
+pull --> create --> start --> attach
+------------------------------------
+		    run
+
+pull --> create --> start --> DO NOT attach
+------------------------------------
+		    run -d
+
+ 104  history
+  105  clear
+  106  ls
+  107  docker ps
+  108  docker inspect fa83744c7f5b
+  109  ping 172.17.0.11
+  110  curl http://172.17.0.11
+  111  clear
+  112  ls
+  113  curl http://172.17.0.11
+  114  clear
+  115  docker run httpd
+  116  clear
+  117  docker run -d httpd
+  118  docker run -d httpd
+  119  docker run -d httpd
+  120  docker ps
+  121  docker run -d httpd
+  122  docker run -d httpd
+  123  docker run -d httpd
+  124  docker run -d httpd
+  125  docker run -d httpd
 
 
+docker run -d -p 80:80 httpd
+docker run -d -p 81:80 httpd
+docker run -d -p 82:80 httpd
+
+  124  docker run -d httpd
+  125  docker run -d httpd
+  126  clear
+  127  docker ps
+  128  docker run -d --name ramukaka httpd
+  129  clear
+  130  docker ps
+  131  clear
+  132  clear
+  133  ls
+  134  history
+  135  clear
+  136  docker run -d -p 80:80 httpd
+  137  docker run -d -p 81:80 httpd
+  138  docker run -d -p 83:80 httpd
+  139  docker ps
 
 
-
-
-
-
+--------------------------------------
+Assginment - Choose 1 fav image from hub and play with it.
 
 
 
