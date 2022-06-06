@@ -90,6 +90,78 @@ IP - 3.111.187.253
 User - centos
 Pass - centos123
 
+===========================================================
+Container 
+	- get inside	---> SSH & BASH
+	- access from outside
+					Network
+================================================
+How to go inside a container?
+------------------------------------
+exec
+	it exec any executbale inside a cont.
+	when u use exex with -it and bash - u can go inside a cont.
+
+attach
+it get attached to the container(PID 1 of the container)
+------------------------------------
+
+
+PID 1 
+===================
+is running so ur PS - VM - Container is running
+----------------------------------------
+PID 1 can be anything...
+
+ 72  docker ps
+   73  docker ps -a
+   74  docker stop $(docker ps -aq)
+   75  clear
+   76  docker rm $(docker ps -aq)
+   77  clear
+   78  docker ps -a
+   79  clear
+   80  docker create httpd
+   81  docker ps
+   82  docker ps -a
+   83  docker start b4bb521c6e94
+   84  cleae
+   85  clear
+   86  docker ps
+   87  docker exec b4bb521c6e94 ls
+   88  docker exec b4bb521c6e94 du
+   89  clear
+   90  docker exec b4bb521c6e94 ps
+   91  sops
+   92  history
+   93  clear
+   94  docker exec b4bb521c6e94 ps
+   95  docker exec b4bb521c6e94 ls
+   96  clear
+   97  docker ps
+   98  docker exec -it b4bb521c6e94 /bin/bash
+   99  clear
+  100  docker exec -it b4bb521c6e94 /bin/bash
+  101  docker ps
+  102  docker attach b4bb521c6e94
+  103  docker ps -a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
