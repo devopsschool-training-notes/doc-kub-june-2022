@@ -175,9 +175,71 @@ ENTRYPOINT ["ls"]
    77  docker ps
    78  clear
    79  docker ps -a
+===================================================================
+Docker Volume
+---------------------------------
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+- Volume	 - /var/lib/docker/volumes
+- mountfs  - any path of the host machine
+- tempfs	 - memory
 
 
-
+ 90  clear
+   91  ls
+   92  clear
+   93  ls /var/lib/docker/volumes/
+   94  docker volume
+   95  docker volume ls
+   96  ls
+   97  ls /var/lib/docker/volumes/
+   98  docker volume prune
+   99  ls /var/lib/docker/volumes/
+  100  ls
+  101  docker volume ls
+  102  clear
+  103  docker volume create
+  104  docker volume ls
+  105  ls /var/lib/docker/volumes/
+  106  docker volume create raj
+  107  docker volume ls
+  108  ls /var/lib/docker/volumes/
+  109  docker volume rm 9cd9744e3965a0a300080ecba8d333c9be5c2318d72efbc26ed18233379137ef
+  110  clear
+  111  ls /var/lib/docker/volumes/
+  112  docker volume ls
+  113  docker volume create dev
+  114  docker volume ls
+  115  docker volume inspect raj
+  116  clear
+  117  ls
+  118  docker run -itd -v raj:/opt/raj ubuntu
+  119  docker run -itd -v raj:/opt/raj -v dev:/opt/dev ubuntu
+  120  docker ps
+  121  docker exec 8a9581bb29f0 df -kh
+  122  docker exec fb38b584f480
+  123  docker exec fb38b584f480 df -kh
+  124  docker exec fb38b584f480 ls /opt
+  125  cd /var/lib/docker/volumes/raj/_data/
+  126  ls
+  127  ls
+  128  touch raaa
+  129  ls
+  130  docker exec fb38b584f480 ls /opt/raj
+  131  docker exec fb38b584f480 touch /opt/raj/ramukaka
+  132  docker exec fb38b584f480 ls /opt/raj
+  133  ls
+  134  docker
+  135  docker ps
+  136  docker stop fb38b584f480 8a9581bb29f0
+  137  docker rm fb38b584f480 8a9581bb29f0
+  138  clear
+  139  ls
+  140  docker volume ls
+  141  docker run -itd -v raj:/opt/raj -v dev:/opt/dev ubuntu
+  142  docker ps
+  143  docker exec b3e874bd68b4 df -kh
+  144  docker exec b3e874bd68b4 ls /opt/raj
+  145  history
 
 
 
