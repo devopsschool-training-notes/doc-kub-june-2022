@@ -75,3 +75,49 @@ apt-get install apache2
 sudo apt-get install openjdk-8-jdk
 
 2. Using Dockerfile
+==============================================================
+How can i share an images?
+-----------------------------
+using tarball
+
+
+  534  docker images
+  535  clear
+  536  docker images
+  537  docker save -o jami.tar jami
+  538  ls
+  539  docker rmi jami
+  540  clear
+  541  docker images
+  542  ls
+  543  docker load -i jami.tar
+  544  docker images
+  545  history
+
+
+using registry
+
+ 548  docker login
+  549  ping google.com
+  550  clear
+  551  docker login
+  552  clear
+  553  docker login
+  554  docker images
+  555  docker push jami
+  556  docker tag jami devopsschools
+  557  /
+  558  clear
+  559  docker images
+  560  docker tag jami devopsschools/june-2022
+  561  docker images
+  562  docker push devopsschools/june-2022
+  563  clear
+
+
+
+
+
+
+
+
