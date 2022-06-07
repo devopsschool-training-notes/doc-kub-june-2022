@@ -1,0 +1,77 @@
+15.206.163.159
+centos
+centos123
+
+How to create an images?
+-------------------------------------
+2 Method
+---------------------
+1 Using Existing Container
+
+
+Ubuntu --> git -> Java -> Tomcat > Httpd
+----------
+	hub
+		 ------------------------------------
+					one layer
+---------------------------------------
+			3-4 mins
+
+ubuntu -> java --> tomcat8 --> app1
+						tomcat9 --> app100
+
+ 478  docker images
+  479  docker ps -a
+  480  docker run -itd ubuntu
+  481  docker ps
+  482  docker exec -it f2d1ecd39c51 /bin/bash
+  483  docker ps
+  484  ls
+  485  docker cp index.html f2d1ecd39c51:/opt
+  486  docker exec -it f2d1ecd39c51 /bin/bash
+  487  docker ps
+  488  history
+  489  docker ps
+  490  docker exec f2d1ecd39c51 java
+  491  java
+  492  clear
+  493  git
+  494  docker exec f2d1ecd39c51 git
+  495  clear
+  496  docker exec f2d1ecd39c51 java
+  497  clear
+  498  docker exec f2d1ecd39c51 javac
+  499  clear
+  500  docker exec f2d1ecd39c51 which apache2
+  501  docker ps
+  502  docker commit -m"up-up-git-apache-java" f2d1ecd39c51 up-up-git-apache-java
+  503  docker images
+  504  docker history ubuntu
+  505  docker history up-up-git-apache-java
+  506  docker inspect up-up-git-apache-java
+  507  clear
+  508  docker images
+  509  clear
+  510  dcoker images
+  511  docker images
+  512  docker run -itd --name=ramu up-up-git-apache-java
+  513  dockr ps
+  514  clear
+  515  docker ps
+  516  docker exec a8d9b04ba6aa java
+  517  clear
+  518  docker exec a8d9b04ba6aa git
+  519  clear
+  520  ls
+  521  docker exec a8d9b04ba6aa which apache2
+  522  docker images
+
+
+INSDIE a conta
+-----------------------------
+apt-get update
+apt-get install git 
+apt-get install apache2
+sudo apt-get install openjdk-8-jdk
+
+2. Using Dockerfile
