@@ -113,6 +113,89 @@ using registry
   561  docker images
   562  docker push devopsschools/june-2022
   563  clear
+============================================================================
+EXAMPLE 
+- https://www.devopsschool.com/blog/example-and-sample-programs-of-dockerfile/
+- https://www.devopsschool.com/blog/how-to-create-a-image-using-dockerfile/
+===========================================================================
+Project - 
+Get me one image of Ubuntu + git + apache + java + copy somefiles
+
+Create an docker image using Dockerfile.
+---------------------------------------------
+What is Dockerfile?
+-----------------
+a file
+	contains sets of instructions.
+	Rules
+	----------
+	- Every line of dockerfile is ONE LAYER
+	- Each line's layer would be created from a container of pre line layer
+-------------------------------
+FROM ubuntu
+MAINTAINER rajesh kumar rajesh@devopsschool.com
+RUN apt-get update && apt-get install git -y
+ENV JAVA_HOME /tmp
+COPY index.html /opt
+ARG filename=devopsschool
+RUN touch /opt/${filename}
+RUN useradd rajesh
+USER rajesh
+
+How to set PID 1???
+How to set container runtime?
+
+PID 1-  ls , a, b ,c java python perl, bash, cat,script.sh
+---------------------------------------
+CMD 
+			CAN BE REPLACED
+ENTRYPOINT
+			CAN NOT REPLACED
+			CMD passed to entrypoing would be appended
+
+FROM ubuntu
+MAINTAINER rajesh kumar rajesh@devopsschool.com
+RUN apt-get update && apt-get install git -y
+ENV JAVA_HOME /tmp
+COPY index.html /opt
+ARG filename=devopsschool
+RUN touch /opt/${filename}
+RUN useradd rajesh
+USER rajesh
+ENTRYPOINT ["ls"]
+
+ 69  vi dockerfile
+   70  docker build -t raj6 .
+   71  vi dockerfile
+   72  docker build -t raj6 .
+   73  docker run raj6 more
+   74  docker ps -a
+   75  clear
+   76  docker run raj6 -lrt
+   77  docker ps
+   78  clear
+   79  docker ps -a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
