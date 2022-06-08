@@ -1,0 +1,127 @@
+Master
+==========================
+API Server 		-> POD -> Container -> Docker image -> Google Registry
+Etcd				-> POD -> Container -> Docker image-> Google Registry
+Controller mgr	-> POD -> Container -> Docker image-> Google Registry
+Schedular		-> POD -> Container -> Docker image-> Google Registry
+
+Proxy			-> POD -> Container -> Docker image-> Google Registry
+Kubectl
+Kubelet
+Docker
+kubeadm init
+
+Worker
+=========================
+Kubelet	
+Docker
+Kubectl		
+Proxy				-> POD -> Container -> Docker image -> Google Registry
+kubeadm join
+
+Workstation
+==========================
+Kubectl 
+
+How to setup k8 clus* in centos7?
+---------------------------------------
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+52.66.244.74
+
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.0.55:6443 --token ga2i2v.c4qxvpzw853o62rj \
+        --discovery-token-ca-cert-hash sha256:909b0523c3d20609542a8496802dd2ecd3ab5a2f06e50dbbcdfcc21c0c3421a8
+[root@ip-172-31-0-55 centos]#
+
+=======================================================================
+POD
+---------------------------------------
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rajesh
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+
+ 45  kubectl get nodes
+   46  kubectl get nodes
+   47  kubectl get pods --all-namespaces
+   48  exit
+   49  kubectl get nodes
+   50  clear
+   51  kubectl
+   52  clear
+   53  kubectl get pods
+   54  kubectl get nodes
+   55  kubectl get pods --all-namespaces
+   56  clear
+   57  kubectl get pods
+   58  ls
+   59  cd
+   60  pwd
+   61  mkdir rajesh
+   62  cd rajesh/
+   63  s
+   64  clear
+   65  ls
+   66  vi pod.yaml
+   67  ls
+   68  kubectl create -f pod.yaml
+   69  kubectl get pods
+   70  kubectl get pods
+   71  kubectl get pods  -o wide
+   72  curl http://10.44.0.1
+   73  clear
+   74  s
+   75  ls
+   76  kubectl describe pods rajesh
+   77  clear
+   78  ls
+   79  kubectl describe pods rajesh
+   80  clear
+   81  kubectl edit pods rajesh
+   82  kubectl describe pods rajesh
+   83  clear
+   84  kubectl get pods  --show-labels
+   85  kubectl delete -f pod.yaml
+   86  kubectl get pods  --show-labels
+
+
+
+IP - 52.66.244.74
+Username - centos
+Password - centos123
+
+sudo -s
+
+
+
+
+
+
