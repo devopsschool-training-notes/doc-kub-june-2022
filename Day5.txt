@@ -176,5 +176,55 @@ kubectl expose deploy my-dep --type=LoadBalancer --port=80 --target-port=80
 
 
 https://www.devopsschool.com/blog/kubernetes-volume-hostpath-explained-with-examples/
+=========================================================
+
+
+
+
+
+https://www.devopsschool.com/blog/understanding-authentication-authorization-in-kubernetes/
+
+
+ 832  sudo yum install openssl -y
+  833  clear
+  834  openssl genrsa -out employee.key 2048
+  835  ls
+  836  openssl req -new -key employee.key -out employee.csr -subj "/CN=employee/O=bitnami"
+  837  ls
+  838  openssl x509 -req -in employee.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out employee.crt -days 500
+  839  clear
+  840  sudo openssl x509 -req -in employee.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out employee.crt -days 500
+  841  ls
+  842  pwd
+  843  kubectl config set-credentials employee --client-certificate=/home/rajesh/rajesh/employee.crt  --client-key=/home/rajesh/rajesh/employee.key
+  844  kubectl config view
+  845  cler
+  846  clear
+  847  kubectl config set-context employee-context --cluster=kubernetes --namespace=office --user=employee
+  848  kubectl config view
+  849  clear
+  850  kubectl create namespace office
+  851  kubectl --context=employee-context get pods
+  852  vi role.yaml
+  853  kubectl create -f role.yaml
+  854  vi role.yaml
+  855  kubectl create -f role.yaml
+  856  clear
+  857  ls
+  858  vi rb.yaml
+  859  kubectl create -f rb.yaml
+  860  kubectl --context=employee-context run nginx --image=nginx
+  861  kubectl --context=employee-context get pods
+  862  history
+
+
+
+
+
+
+
+
+
+
 
 
