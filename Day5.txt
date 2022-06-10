@@ -1,0 +1,113 @@
+Kubectl
+Namespace
+POD
+ReplicationController
+ReplicaSets
+Deployment
+
+Services
+Storage - 5
+Secuerity - 5
+===========================================================
+  675  kubectl create -h
+  676  kubectl create service -h
+  679  kubectl create service clustorip -h
+  680  kubectl create service clusterip -h
+
+kubectl create service clusterip my-cs --tcp=5678:80 -n=rajesh
+
+
+5678:80
+5678 --- SERVICE PORT NUM
+80 - Container PORT of POD
+
+ 681  history
+  682  clear
+  683  kubectl create service clusterip my-cs --tcp=5678:80 -n=rajesh
+  684  kubectl get svc -n=rajesh
+  685  clear
+  686  kubectl get pods -n=rajesh --show-labels
+  687  kubectl get svc -n=rajesh --show-labels
+  688  curl http://10.104.240.69
+  689  curl http://10.104.240.69:5678
+  690  kubectl describe svc my-cs -n=rajesh
+  691  kubectl edit svc my-cs -n=rajesh
+  692  clear
+  693  kubectl get pods -n=rajesh --show-labels
+  694  kubectl get svc -n=rajesh --show-labels
+  695  kubectl edit svc my-cs -n=rajesh
+  696  clear
+  697  kubectl get pods -n=rajesh --show-labels
+  698  kubectl get svc -n=rajesh --show-labels
+  699  kubectl describe svc my-cs -n=rajesh
+  700  kubectl edit svc my-cs -n=rajesh
+  701  clear
+  702  kubectl get pods -n=rajesh --show-labels
+  703  kubectl edit svc my-cs -n=rajesh
+  704  kubectl get pods -n=rajesh --show-labels
+  705  kubectl get svc -n=rajesh --show-labels
+  706  kubectl describe svc my-cs -n=rajesh
+  707  curl http://10.104.240.69:5678
+  708  watch curl http://10.104.240.69:5678
+  709  clear
+
+
+Create a SVC ---> clusterIP
+
+
+
+Create a SVC ---> clusterIP + port-forward at NodePort
+======================================================
+				Service-Type-NodePort
+
+
+kubectl create service nodeport my-np --tcp=5678:80 -n=rajesh
+
+
+Create a SVC ---> clusterIP + port-forward at NodePort of all Node + Create LB at Cloud(AWS)
+======================================================
+				Service-Type-Loadbalancer
+
+kubectl create service loadbalancer my-np --tcp=5678:80 -n=rajesh
+
+
+ 711  history
+  712  clear
+  713  ls
+  714  kubectl get svc -n=rajesh
+  715  clear
+  716  kubectl port-forward -h
+  717  kubectl create service -h
+  718  clear
+  719  kubectl create service nodeport my-np --tcp=5678:80 -n=rajesh
+  720  kubectl get svc -n=rajesh
+  721  kubectl edit svc my-np -n=rajesh
+  722  curl http://10.108.216.56:5678
+  723  clear
+  724  curl http://http://34.100.147.64:30180/
+  725  curl http://34.100.147.64:30180/
+  726  systemctl stop firewalld
+  727  systemctl disable firewalld
+  728  clear
+  729  kubectl create service loadbalancer my-np --tcp=5678:80 -n=rajesh
+  730  kubectl create service loadbalancer my-lb --tcp=5678:80 -n=rajesh
+  731  kubectl get scv -n=rajesh
+  732  kubectl get svc -n=rajesh
+
+
+=======================================================================
+
+kubectl create deployment my-dep --image=nginx --replicas=10 -n=rajesh
+kubectl expose -h
+kubectl expose deploy my-dep --port=80 --target-port=80
+
+kubectl expose deploy my-dep --type=NodePort --port=80 --target-port=80
+kubectl expose deploy my-dep --type=LoadBalancer --port=80 --target-port=80
+
+
+
+
+
+
+
+
