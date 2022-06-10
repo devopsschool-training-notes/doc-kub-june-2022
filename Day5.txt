@@ -106,8 +106,75 @@ kubectl expose deploy my-dep --type=LoadBalancer --port=80 --target-port=80
 
 
 
+ 759  kubectl get pods
+  760  clear
+  761  ls
+  762  kubectl get pods -n=rajesh
+  763  clear
+  764  ls
+  765  kubectl create -f pod1.yaml
+  766  kubectl get pods
+  767  ls
+  768  clear
+  769  ls
+  770  kubectl get pods
+  771  kubectl cp rc.yaml rajesh:/tmp
+  772  kubectl cp rc.yaml rajesh1:/tmp
+  773  kubectl exec rajesh ls /tmp
+  774  kubectl exec rajesh1 ls /tmp
+  775  c;ear
+  776  clear
+  777  kubectl exec rajesh1 ls /tmp
+  778  cd /var/lib/
+  779  ls
+  780  find . -name rc.yaml
+  781  sudo find . -name rc.yaml
+  782  clear
+  783  sudo find . -name rc.yaml
+  784  kubectl delete pod rajesh1
+  785  sudo find . -name rc.yaml
+  786  clear
+  787  cd -
+  788  ls
+  789  vi hostpath.yaml
+  790  clear
+  791  ls
+  792  kubectl apply -f hostpath.yaml
+  793  kubectl get pods
+  794  ls
+  795  kubectl cp pod2.yaml test-pd:/test-pd
+  796  clear
+  797  kubectl exec test-pd ls /
+  798  clear
+  799  ls
+  800  kubectl delete of hostpath.yaml
+  801  kubectl delete -f hostpath.yaml
+  802  clear
+  803  ls
+  804  vi hostpath.yaml
+  805  clear
+  806  ls
+  807  kubectl apply -f hostpath.yaml
+  808  kubectl get pods
+  809  kubectl exec test-pod ls
+  810  kubectl exec test-pod ls /
+  811  kubectl get pods
+  812  kubectl exec test-pd ls /
+  813  clear
+  814  kubectl cp pod2.yaml test-pd:/test-pd
+  815  cd /var/lib/
+  816  sudo find . -name pod2.yaml
+  817  ls /data/
+  818  kubectl get pods
+  819  kubectl delete pod test-pd
+  820  ls /data/
+  821  kubectl apply -f hostpath.yaml
+  822  cd -
+  823  kubectl apply -f hostpath.yaml
+  824  kubectl exec test-pd ls /test-pd
+  825  history
 
 
-
+https://www.devopsschool.com/blog/kubernetes-volume-hostpath-explained-with-examples/
 
 
